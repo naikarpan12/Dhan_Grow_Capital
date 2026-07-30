@@ -1,16 +1,24 @@
 export const BRAND = {
   name: "DhanGrow Capital",
   short: "DhanGrow",
-  founder: "Sagar Reddy", // placeholder — replace with real name
-  phone: "+91 98765 43210",
-  whatsapp: "919876543210",
-  email: "hello@dhangrow.capital",
-  city: "Bengaluru, India",
-  arn: "ARN-XXXXXX",
-  euin: "EXXXXXX",
+  founder: "Arpankumar Naik",
+  phone: "+91 70168 62861",
+  whatsapp: "917016862861",
+  email: "naikarpan11.an@gmail.com",
+  city: "Surat, Gujarat",
+  arn: "AMFI-Registered MFD",
+  euin: "NISM Series V-A",
+  logo: "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/yxo0cjh6_Logo.jpg",
+  portrait:
+    "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/48l5bjds_WhatsApp%20Image%202026-07-30%20at%2010.08.19%20PM.jpeg",
+  brochure:
+    "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/u1d55f4o_DhanGrow%20Capital%20Brochure.pdf",
+  linkedin: "https://www.linkedin.com/in/arpankumar-naik-0134502a1/",
 };
 
-export const whatsappHref = (msg = "Hi! I'd like to know more about DhanGrow Capital.") =>
+const DEFAULT_MSG = "I want to begin my Financial Freedom. How can we start?";
+
+export const whatsappHref = (msg = DEFAULT_MSG) =>
   `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(msg)}`;
 
 export const inr = (n) => {

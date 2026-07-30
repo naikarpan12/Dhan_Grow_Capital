@@ -1,7 +1,15 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { CertificateIcon, GraduationCap, ShieldCheck, WhatsappLogo, ArrowUpRight } from "@phosphor-icons/react";
-import { whatsappHref } from "@/lib/site";
+import {
+  CertificateIcon,
+  GraduationCap,
+  ShieldCheck,
+  WhatsappLogo,
+  ArrowUpRight,
+  Buildings,
+  DownloadSimple,
+} from "@phosphor-icons/react";
+import { whatsappHref, BRAND } from "@/lib/site";
 
 function Counter({ to, prefix = "", suffix = "", decimals = 0, testid }) {
   const ref = useRef(null);
@@ -22,9 +30,12 @@ function Counter({ to, prefix = "", suffix = "", decimals = 0, testid }) {
 }
 
 const creds = [
-  { icon: CertificateIcon, label: "CFA Level 2", note: "Cleared" },
-  { icon: GraduationCap, label: "MBA", note: "Finance" },
-  { icon: ShieldCheck, label: "NISM", note: "Research Analyst · Series XV" },
+  { icon: CertificateIcon, label: "CFA Level II", note: "Cleared · CFA Institute" },
+  { icon: GraduationCap, label: "PGDM Finance", note: "IMT Ghaziabad · 2024-26" },
+  { icon: ShieldCheck, label: "NISM Series XV", note: "Research Analyst" },
+  { icon: ShieldCheck, label: "NISM Series V-A", note: "Mutual Fund Distributor" },
+  { icon: ShieldCheck, label: "NISM Series X-A", note: "Investment Advisor" },
+  { icon: Buildings, label: "Prev. Gulf Islamic", note: "PE & IR Intern · Dubai" },
 ];
 
 export default function FounderTrust() {
@@ -47,8 +58,8 @@ export default function FounderTrust() {
               transition={{ duration: 0.9 }}
               className="font-display text-5xl md:text-7xl leading-[0.95] tracking-[-0.02em]"
             >
-              Managed personally.<br />
-              <span className="italic text-[#f4f1ea]/70">Answerable, always.</span>
+              Managed personally by<br />
+              <span className="italic text-[#f4f1ea]/80">{BRAND.founder}.</span>
             </motion.h2>
           </div>
         </div>
@@ -59,24 +70,33 @@ export default function FounderTrust() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-12 md:col-span-5 clipped-frame overflow-hidden"
+            className="col-span-12 md:col-span-5 clipped-frame overflow-hidden bg-black"
           >
             <img
-              src="https://images.unsplash.com/photo-1640531005390-38bd92755d6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBpbmRpYW4lMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc4NTQyODY5Nnww&ixlib=rb-4.1.0&q=85"
-              alt="Founder portrait"
-              className="w-full h-[520px] object-cover"
+              src={BRAND.portrait}
+              alt={`${BRAND.founder} — Founder, DhanGrow Capital`}
+              className="w-full h-[560px] object-cover object-top"
+              style={{ filter: "grayscale(0.15) contrast(1.03)" }}
             />
           </motion.div>
 
           <div className="col-span-12 md:col-span-7 md:pl-8">
+            <p className="overline text-[#f4f1ea]/60 mb-4">Founder · AMFI-Registered MFD</p>
             <p className="font-body text-lg md:text-xl leading-relaxed text-[#f4f1ea]/85 max-w-xl">
               I built DhanGrow Capital to run mutual fund portfolios the way I&apos;d
               want mine to be run — quietly, in writing, and with a clear line of
               sight from every SIP to a specific life goal. No pressure calls.
               No product pushes. Just research, review and steady rebalancing.
             </p>
+            <p className="mt-5 font-body text-base leading-relaxed text-[#f4f1ea]/70 max-w-xl">
+              Prior to founding DhanGrow, I served institutional and HNI capital
+              at <span className="italic">Gulf Islamic Investments, Dubai</span> —
+              supporting private equity raises exceeding AED 100M and reporting
+              IRR/MOIC to LPs. That same rigour comes home to every Indian
+              family I now work with.
+            </p>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {creds.map((c) => {
                 const Icon = c.icon;
                 return (
@@ -86,7 +106,7 @@ export default function FounderTrust() {
                     data-testid={`credential-${c.label.replace(/\s+/g, "-").toLowerCase()}`}
                   >
                     <Icon size={22} weight="duotone" />
-                    <div className="mt-3 font-display text-2xl">{c.label}</div>
+                    <div className="mt-3 font-display text-xl leading-tight">{c.label}</div>
                     <div className="overline text-[#f4f1ea]/60 mt-1">{c.note}</div>
                   </div>
                 );
@@ -110,7 +130,7 @@ export default function FounderTrust() {
 
             <div className="mt-12 flex flex-wrap gap-3">
               <a
-                href={whatsappHref("Hi Sagar, I'd like to schedule an introduction call.")}
+                href={whatsappHref()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="pill-btn accent"
@@ -119,6 +139,18 @@ export default function FounderTrust() {
                 <WhatsappLogo size={16} weight="fill" />
                 Book an introduction
                 <ArrowUpRight size={14} />
+              </a>
+              <a
+                href={BRAND.brochure}
+                download="DhanGrow-Capital-Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-btn"
+                style={{ borderColor: "#f4f1ea", color: "#f4f1ea" }}
+                data-testid="founder-brochure-download"
+              >
+                <DownloadSimple size={14} weight="bold" />
+                Download brochure
               </a>
             </div>
           </div>

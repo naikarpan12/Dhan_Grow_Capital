@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowDown, WhatsappLogo } from "@phosphor-icons/react";
-import { whatsappHref } from "@/lib/site";
+import { ArrowDown, WhatsappLogo, DownloadSimple } from "@phosphor-icons/react";
+import { whatsappHref, BRAND } from "@/lib/site";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -60,7 +60,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8, ease }}
               className="overline text-black/60"
             >
-              Est. 2024 · Bengaluru
+              Est. 2024 · Surat, Gujarat
             </motion.p>
           </div>
           <div className="col-span-12 md:col-span-10 flex md:justify-end">
@@ -123,6 +123,17 @@ export default function Hero() {
               </a>
               <a href="#calculators" className="pill-btn" data-testid="hero-secondary-cta">
                 Try the calculators
+              </a>
+              <a
+                href={BRAND.brochure}
+                download="DhanGrow-Capital-Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-btn"
+                data-testid="hero-brochure-cta"
+              >
+                <DownloadSimple size={14} weight="bold" />
+                Download brochure
               </a>
             </motion.div>
           </div>
