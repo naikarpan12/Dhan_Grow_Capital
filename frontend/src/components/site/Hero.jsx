@@ -60,7 +60,7 @@ export default function Hero() {
               transition={{ delay: 0.2, duration: 0.8, ease }}
               className="overline text-black/60"
             >
-              Est. 2024 · Surat, Gujarat
+              Est. 2025 · Surat, Gujarat
             </motion.p>
           </div>
           <div className="col-span-12 md:col-span-10 flex md:justify-end">
@@ -151,7 +151,7 @@ export default function Hero() {
               {[
                 { k: "AUM", v: "₹50L+" },
                 { k: "Families", v: "15+" },
-                { k: "Since", v: "2024" },
+                { k: "Since", v: "2025" },
               ].map((s) => (
                 <div key={s.k} className="px-4 py-6">
                   <div className="overline text-black/50">{s.k}</div>
