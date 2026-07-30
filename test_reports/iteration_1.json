@@ -1,0 +1,26 @@
+{
+  "summary": "Frontend-only smoke test for DhanGrow Capital marketing site. All 11 requested checks passed: hero reveal + headline, all sections render with correct data-testids (navbar, hero, marquee, manifesto 4 chapters, services 6 cards, calculators section, founder, insights 3 cards, footer, floating-cta), nav link scroll (Calculators), Nav 'Talk to us' href is https://wa.me/, SIP monthly + years sliders update Invested/Est.Corpus/Wealth-Gain values and chart re-renders (verified via React-native setter dispatch), Lumpsum/Retirement/Education tabs render sliders + chart, Education tab shows Required monthly SIP text, founder counters show ₹50L+/15+/6 mo after scroll, floating WhatsApp starts with https://wa.me/, floating Phone starts with tel:, footer WhatsApp + phone links correct, editorial marquee scrolls with Discipline/Patience/Research/Compounding words, no horizontal overflow at 1440/768/375, no console errors captured.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Homepage loads without console errors; all 10 sections visible",
+    "Hero headline 'Wealth, nurtured with discipline.' visible after kinetic reveal",
+    "Sticky navbar links scroll to correct sections (Calculators verified)",
+    "Nav 'Talk to us' CTA -> https://wa.me/919876543210?text=...",
+    "Manifesto chapters I-IV all present (manifesto-chapter-1..4)",
+    "Services 6 cards render (service-card-01..06)",
+    "SIP sliders (sip-monthly, sip-years) update corpus/invested/wealth values and chart",
+    "Lumpsum, Retirement, Education tabs each render sliders + chart",
+    "Education tab computes 'Required monthly SIP' value",
+    "Founder counters: aum=₹50L+, clients=15+, tenure=6 mo",
+    "Floating WhatsApp starts with https://wa.me/; Phone starts with tel:+919876543210",
+    "Footer WhatsApp + phone-link hrefs correct",
+    "Editorial marquee scrolls Discipline/Patience/Research/Compounding/Clarity/Stewardship/Prudence/Consistency",
+    "No horizontal overflow at 1440px, 768px, 375px"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "n/a", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "First-iteration smoke test only. Initial slider check via generic .value= failed due to React controlled-input, but verified working via HTMLInputElement.prototype setter (React-safe technique). No backend endpoints tested per instructions."
+}
