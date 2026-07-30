@@ -1,0 +1,156 @@
+{
+  "project_name": "DhanGrow Capital",
+  "project_type": "Marketing + Calculators (hybrid_fullstack)",
+  "design_philosophy": "Neo-Editorial Wealth Management. Combines Swiss Brutalist structural precision with Organic/Luxury warmth (Warm Sand & Obsidian). A deliberate rejection of 'fintech green' templates, focusing on high-end editorial typography, deliberate asymmetry, and cinematic motion. It feels like an exclusive, old-money boutique.",
+  "theme_mode": "light",
+  "typography": {
+    "fonts": [
+      {
+        "role": "Headings & Display",
+        "name": "Cormorant Garamond",
+        "type": "serif",
+        "classes": "font-serif tracking-tighter font-light leading-none"
+      },
+      {
+        "role": "Body & Utility",
+        "name": "Manrope",
+        "type": "sans-serif",
+        "classes": "font-sans leading-relaxed tracking-normal"
+      },
+      {
+        "role": "Data & Calculators (Numbers)",
+        "name": "JetBrains Mono",
+        "type": "monospace",
+        "classes": "font-mono tracking-tight"
+      }
+    ],
+    "rules": [
+      "NO generic Inter for headings.",
+      "Display typography must have massive scale contrast (e.g., text-6xl+ for H1, but tight leading).",
+      "Overlines and labels must be uppercase, tiny (text-xs), with wide tracking (tracking-[0.2em])."
+    ]
+  },
+  "colors": {
+    "archetype": "Organic & Earthy + Luxury",
+    "palette": {
+      "background": "#F4F1EA",
+      "foreground": "#0A0A0A",
+      "primary": "#183226",
+      "primary_foreground": "#F4F1EA",
+      "accent": "#B84A36",
+      "accent_foreground": "#F4F1EA",
+      "muted": "#E8E3D8",
+      "border": "rgba(10, 10, 10, 0.15)",
+      "glass_bg": "rgba(244, 241, 234, 0.7)"
+    },
+    "rules": [
+      "Never use pure white or pure black. Always tint neutrals (F4F1EA base, 0A0A0A text).",
+      "Use Accent (Terracotta/B84A36) strictly for critical interactive moments (CTAs).",
+      "Use Primary (Deep Forest/183226) for chart fills and massive graphic blocks."
+    ]
+  },
+  "visual_enhancers": {
+    "texture": "Apply a subtle SVG noise/grain texture globally as a fixed overlay (mix-blend-multiply, opacity-20) to kill the digital flatness.",
+    "borders": "Use 1px solid borders (border-black/15) to create grid compartments (Swiss Brutalist style).",
+    "shadows": "No soft diffuse shadows. Use sharp, flat block shadows or none at all. Rely on borders for definition.",
+    "radii": "Keep borders mostly sharp (rounded-none or rounded-sm) to maintain an editorial, mature look. Use rounded-full only for pill buttons."
+  },
+  "motion_and_interactions": {
+    "scrolling": "Install and configure `@studio-freight/react-lenis` for smooth momentum scrolling.",
+    "hero_reveal": "Kinetic Masked Reveal: Use framer-motion. Wrap text lines in 'overflow-hidden' divs, and animate the child elements' 'y' property from '100%' to '0%' with a 1s cubic-bezier ease on load.",
+    "parallax": "Use framer-motion useScroll and useTransform to move massive background images or abstract shapes at a different speed than the page content.",
+    "hover_states": "All buttons must invert colors or shift background with framer-motion or Tailwind transitions (transition-colors duration-300 ease-out)."
+  },
+  "layouts_and_grids": {
+    "spacing": "Generous spacing philosophy. Use p-12, p-16, py-24, py-32 for sections. Let elements breathe.",
+    "bento_grid": "For the 'Services' section, use the 'TETRIS' Mode grid (grid-cols-1 md:grid-cols-12, gap-8, mixing col-span-4 and col-span-8 blocks) to create asymmetry and visual tension."
+  },
+  "section_blueprint": [
+    {
+      "name": "Navigation",
+      "design": "Sticky crystal glass header (backdrop-blur-xl bg-[#F4F1EA]/70). 1px bottom border. Left-aligned refined logo, right-aligned WhatsApp CTA pill."
+    },
+    {
+      "name": "Hero Section",
+      "design": "Massive kinetic typography ('Wealth, Nurtured' or similar). Line-by-line reveal. Background features a slow-moving, moody abstract architecture or subtle parallax photo. 80vh minimum height."
+    },
+    {
+      "name": "Editorial Marquee",
+      "design": "Very slow-moving ribbon using 'react-fast-marquee'. Large outline typography or Serif text (e.g., 'DISCIPLINE • PATIENCE • RESEARCH • GROWTH'). Color: low contrast (Pale beige with dark text)."
+    },
+    {
+      "name": "Manifesto (Chapters)",
+      "design": "Numbered sections (I. Discipline, II. Strategy...). Off-grid asymmetry. Left column sticky large Roman numeral, right column scrolling text blocks and clipped-frame photography."
+    },
+    {
+      "name": "Services Grid",
+      "design": "Tetris bento layout. Features SIP, Lumpsum, Tax-Efficient, Retirement, Education, Research. Use icons from @phosphor-icons/react (Duotone). Use borders between grid items."
+    },
+    {
+      "name": "Calculators Section",
+      "design": "Highly functional, tech-forward. Shadcn Tabs to switch between SIP / Lumpsum / Retirement / Education. Mono-spaced numbers. Use 'recharts' for a live-updating AreaChart (Primary color fill). Client-side calculations only."
+    },
+    {
+      "name": "Founder Profile & Trust",
+      "design": "Deep Forest Green background (#183226) with warm text. Cinematic clipped-frame portrait of the founder. Heavy emphasis on credentials (CFA L2, MBA Finance, NISM RA). AUM & Client counters animating on scroll using framer-motion."
+    },
+    {
+      "name": "Floating Contact",
+      "design": "Fixed bottom-right WhatsApp and Phone icon buttons (Phosphor Icons). High elevation, vibrant Accent color."
+    },
+    {
+      "name": "Footer",
+      "design": "Massive padding (py-32). Huge logo or 'Let's Talk' typography. SEBI compliance disclaimer in small mono text."
+    }
+  ],
+  "components_path_and_instructions": [
+    {
+      "name": "Shadcn UI",
+      "instructions": "Use Shadcn components for UI logic (Tabs, Slider, Input) but HEAVILY strip away the default Vercel-look. Remove generic rounded borders and ring shadows. Re-style to match the editorial Brutalist/Organic theme."
+    },
+    {
+      "name": "Recharts",
+      "instructions": "Install 'recharts'. Remove default axis lines/ticks for a cleaner look. Use curved lines (type='monotone') and an Area fill matching the brand's primary color."
+    }
+  ],
+  "accessibility_and_testing": {
+    "testing_attributes": "All interactive and key informational elements MUST include a 'data-testid' attribute (e.g., data-testid='sip-calculator-tab', data-testid='whatsapp-cta-button', data-testid='aum-counter').",
+    "contrast": "Ensure the Accent color and Primary color text over the Bone White background meet WCAG AA standards."
+  },
+  "image_urls": {
+    "hero_abstract": {
+      "url": "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGFyY2hpdGVjdHVyYWwlMjBsaW5lc3xlbnwwfHx8fDE3ODU0Mjg2OTZ8MA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract sharp architectural lines, perfect for the Brutalist tech parallax background.",
+      "category": "Hero / Background"
+    },
+    "founder_portrait": {
+      "url": "https://images.unsplash.com/photo-1640531005390-38bd92755d6a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBpbmRpYW4lMjBidXNpbmVzc21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc4NTQyODY5Nnww&ixlib=rb-4.1.0&q=85",
+      "description": "Professional Indian businessman in a suit against a dark background.",
+      "category": "Founder Profile"
+    },
+    "nurtured_growth": {
+      "url": "https://images.pexels.com/photos/10436618/pexels-photo-10436618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Miniature bonsai tree in geometric pot. Represents nurtured wealth and discipline.",
+      "category": "Manifesto / Core Values"
+    },
+    "wealth_lifestyle": {
+      "url": "https://images.unsplash.com/photo-1757439402384-c0afc5fda20c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBsdXh1cnklMjBmYW1pbHklMjBsaWZlc3R5bGV8ZW58MHx8fHwxNzg1NDI4Njk3fDA&ixlib=rb-4.1.0&q=85",
+      "description": "High-end luxury outdoor dining/living setup, symbolizing retirement goals.",
+      "category": "Services / Retirement"
+    }
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy and absolute positioning.",
+    "You MUST NOT apply universal transition (e.g., transition: all). Always add transitions for specific interactive elements excluding transforms.",
+    "You MUST NOT center align the app container, i.e. do not add '.App { text-align: center; }' in the css file. This disrupts the human natural reading flow of text.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons. Use the specified @phosphor-icons/react library.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "CRITICAL: The site MUST be built using .js files (JavaScript), not .tsx (TypeScript).",
+    "CRITICAL: Include data-testid attributes on all interactive elements.",
+    "CRITICAL: Ensure the header is not entirely transparent if content scrolls beneath it (use blur or solid backgrounds)."
+  ]
+}
