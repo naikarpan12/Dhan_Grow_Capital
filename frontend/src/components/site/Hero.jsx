@@ -149,8 +149,8 @@ export default function Hero() {
           >
             <div className="grid grid-cols-3 border-t border-b border-ink divide-x divide-black/15">
               {[
-                { k: "AUM", v: "₹50L+" },
-                { k: "Families", v: "15+" },
+                { k: "AUM", v: "₹1Cr+" },
+                { k: "Families", v: "25+" },
                 { k: "Since", v: "2025" },
               ].map((s) => (
                 <div key={s.k} className="px-4 py-6">
