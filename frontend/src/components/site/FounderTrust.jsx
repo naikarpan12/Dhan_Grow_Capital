@@ -115,11 +115,11 @@ export default function FounderTrust() {
 
             <div className="mt-12 border-t border-[#f4f1ea]/20 pt-10 grid grid-cols-3 gap-6">
               <div>
-                <Counter to={50} prefix="₹" suffix="L+" testid="counter-aum" />
+                <Counter to={1} prefix="₹" suffix="Cr+" testid="counter-aum" />
                 <div className="overline text-[#f4f1ea]/60 mt-3">Assets under advice</div>
               </div>
               <div>
-                <Counter to={15} suffix="+" testid="counter-clients" />
+                <Counter to={25} suffix="+" testid="counter-clients" />
                 <div className="overline text-[#f4f1ea]/60 mt-3">Families served</div>
               </div>
               <div>
