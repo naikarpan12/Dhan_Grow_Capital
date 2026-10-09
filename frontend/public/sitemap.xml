@@ -5,4 +5,19 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://dhangrowcapital.com/insights/asset-allocation-brahmastra-for-market-downturns</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://dhangrowcapital.com/insights/are-nfos-a-good-investment-opportunity</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://dhangrowcapital.com/insights/gift-city-mutual-funds-explained</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
 </urlset>

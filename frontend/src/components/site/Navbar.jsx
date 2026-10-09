@@ -3,11 +3,11 @@ import { WhatsappLogo, ArrowUpRight, DownloadSimple } from "@phosphor-icons/reac
 import { BRAND, whatsappHref } from "@/lib/site";
 
 const links = [
-  { label: "Manifesto", href: "#manifesto" },
-  { label: "Services", href: "#services" },
-  { label: "Calculators", href: "#calculators" },
-  { label: "Founder", href: "#founder" },
-  { label: "Insights", href: "#insights" },
+  { label: "Manifesto", href: "/#manifesto" },
+  { label: "Services", href: "/#services" },
+  { label: "Calculators", href: "/#calculators" },
+  { label: "Founder", href: "/#founder" },
+  { label: "Insights", href: "/#insights" },
 ];
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
       data-testid="site-navbar"
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
-        <a href="#top" data-testid="brand-logo" className="flex items-center gap-3 group">
+        <a href="/#top" data-testid="brand-logo" className="flex items-center gap-3 group">
           <img
             src={BRAND.logo}
             alt="DhanGrow Capital"
