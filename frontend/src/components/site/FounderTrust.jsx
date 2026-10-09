@@ -11,6 +11,13 @@ import {
 } from "@phosphor-icons/react";
 import { whatsappHref, BRAND } from "@/lib/site";
 
+const LAUNCH_DATE = new Date(2025, 11, 1); // December 2025
+
+function monthsSinceLaunch() {
+  const now = new Date();
+  return (now.getFullYear() - LAUNCH_DATE.getFullYear()) * 12 + (now.getMonth() - LAUNCH_DATE.getMonth()) + 1;
+}
+
 function Counter({ to, prefix = "", suffix = "", decimals = 0, testid }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -115,15 +122,15 @@ export default function FounderTrust() {
 
             <div className="mt-12 border-t border-[#f4f1ea]/20 pt-10 grid grid-cols-3 gap-6">
               <div>
-                <Counter to={50} prefix="₹" suffix="L+" testid="counter-aum" />
+                <Counter to={2} prefix="₹" suffix="Cr+" testid="counter-aum" />
                 <div className="overline text-[#f4f1ea]/60 mt-3">Assets under advice</div>
               </div>
               <div>
-                <Counter to={15} suffix="+" testid="counter-clients" />
+                <Counter to={100} suffix="+" testid="counter-clients" />
                 <div className="overline text-[#f4f1ea]/60 mt-3">Families served</div>
               </div>
               <div>
-                <Counter to={6} suffix=" mo" testid="counter-tenure" />
+                <Counter to={monthsSinceLaunch()} suffix=" mo" testid="counter-tenure" />
                 <div className="overline text-[#f4f1ea]/60 mt-3">& compounding</div>
               </div>
             </div>

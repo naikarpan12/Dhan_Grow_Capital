@@ -56,12 +56,12 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-4">
             <div className="overline text-[#f4f1ea]/50 mb-6">Navigate</div>
             <ul className="grid grid-cols-2 gap-3 text-sm">
-              <li><a href="#manifesto" className="hover:text-terracotta transition-colors duration-300">Manifesto</a></li>
-              <li><a href="#services" className="hover:text-terracotta transition-colors duration-300">Services</a></li>
-              <li><a href="#calculators" className="hover:text-terracotta transition-colors duration-300">Calculators</a></li>
-              <li><a href="#founder" className="hover:text-terracotta transition-colors duration-300">Founder</a></li>
-              <li><a href="#insights" className="hover:text-terracotta transition-colors duration-300">Insights</a></li>
-              <li><a href="#contact" className="hover:text-terracotta transition-colors duration-300">Contact</a></li>
+              <li><a href="/#manifesto" className="hover:text-terracotta transition-colors duration-300">Manifesto</a></li>
+              <li><a href="/#services" className="hover:text-terracotta transition-colors duration-300">Services</a></li>
+              <li><a href="/#calculators" className="hover:text-terracotta transition-colors duration-300">Calculators</a></li>
+              <li><a href="/#founder" className="hover:text-terracotta transition-colors duration-300">Founder</a></li>
+              <li><a href="/#insights" className="hover:text-terracotta transition-colors duration-300">Insights</a></li>
+              <li><a href="/#contact" className="hover:text-terracotta transition-colors duration-300">Contact</a></li>
             </ul>
           </div>
         </div>
