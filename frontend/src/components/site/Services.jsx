@@ -11,6 +11,7 @@ import {
   ChartBar,
   Briefcase,
 } from "@phosphor-icons/react";
+import { whatsappHref } from "@/lib/site";
 
 const services = [
   {
@@ -112,13 +113,16 @@ export default function Services() {
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
-              <motion.div
+              <motion.a
                 key={s.tag}
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.04 }}
-                className={`relative border border-ink p-8 md:p-10 ${
+                className={`relative block border border-ink p-8 md:p-10 ${
                   s.span || ""
                 } ${s.dark ? "bg-forest text-[#f4f1ea]" : "bg-[#e8e3d8]/60"} group`}
                 data-testid={`service-card-${s.tag}`}
@@ -160,7 +164,7 @@ export default function Services() {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </div>
