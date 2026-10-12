@@ -9,8 +9,7 @@ export const BRAND = {
   arn: "AMFI-Registered MFD",
   euin: "NISM Series V-A",
   logo: "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/yxo0cjh6_Logo.jpg",
-  portrait:
-    "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/48l5bjds_WhatsApp%20Image%202026-07-30%20at%2010.08.19%20PM.jpeg",
+  portrait: "/images/founder-portrait.jpg",
   brochure:
     "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/u1d55f4o_DhanGrow%20Capital%20Brochure.pdf",
   linkedin: "https://www.linkedin.com/in/arpankumar-naik-0134502a1/",
