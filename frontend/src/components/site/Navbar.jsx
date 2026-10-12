@@ -25,8 +25,7 @@ export default function Navbar() {
           <img
             src={BRAND.logo}
             alt="DhanGrow Capital"
-            className="h-9 w-9 object-contain"
-            style={{ mixBlendMode: "multiply" }}
+            className="h-9 w-9 object-contain rounded-sm"
           />
           <span className="font-display text-2xl leading-none tracking-tight hidden sm:inline">
             {BRAND.short}

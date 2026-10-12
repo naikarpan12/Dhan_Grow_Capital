@@ -8,7 +8,7 @@ export const BRAND = {
   city: "Surat, Gujarat",
   arn: "AMFI-Registered MFD",
   euin: "NISM Series V-A",
-  logo: "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/yxo0cjh6_Logo.jpg",
+  logo: "/images/logo.jpg",
   portrait: "/images/founder-portrait.jpg",
   brochure:
     "https://customer-assets-lxgj4vgw.emergentagent.net/job_mutual-fund-pro-9/artifacts/u1d55f4o_DhanGrow%20Capital%20Brochure.pdf",
