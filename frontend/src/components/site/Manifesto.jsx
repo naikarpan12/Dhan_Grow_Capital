@@ -68,15 +68,6 @@ export default function Manifesto() {
                 <div className="chapter-num text-8xl md:text-9xl text-black/85 leading-none">
                   {c.num}
                 </div>
-                {i === 1 && (
-                  <div className="mt-8 clipped-frame overflow-hidden max-w-[280px]">
-                    <img
-                      src="https://images.pexels.com/photos/10436618/pexels-photo-10436618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                      alt="Nurtured growth"
-                      className="w-full h-64 object-cover"
-                    />
-                  </div>
-                )}
               </div>
               <div className="col-span-12 md:col-span-7 md:col-start-6">
                 <h3 className="font-display text-3xl md:text-5xl leading-[1.05] tracking-tight">

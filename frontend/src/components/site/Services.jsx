@@ -7,7 +7,11 @@ import {
   GraduationCap,
   MagnifyingGlass,
   ArrowUpRight,
+  Globe,
+  ChartBar,
+  Briefcase,
 } from "@phosphor-icons/react";
+import { whatsappHref } from "@/lib/site";
 
 const services = [
   {
@@ -59,6 +63,30 @@ const services = [
     span: "md:col-span-12",
     inline: true,
   },
+  {
+    icon: Globe,
+    tag: "07",
+    title: "GIFT City Funds",
+    body:
+      "Access global equity and multi-asset strategies through IFSC-regulated, dollar-denominated schemes — a regulated route to international diversification, from India.",
+    span: "md:col-span-4",
+  },
+  {
+    icon: ChartBar,
+    tag: "08",
+    title: "Specialized Investment Funds (SIF)",
+    body:
+      "SEBI's newest category for investors ready to move beyond traditional mutual funds — long-short and enhanced-allocation strategies, accessed through a licensed SIF sponsor.",
+    span: "md:col-span-4",
+  },
+  {
+    icon: Briefcase,
+    tag: "09",
+    title: "Portfolio Management Services (PMS)",
+    body:
+      "For larger, concentrated portfolios — curated access to SEBI-registered portfolio managers, with the same written-review discipline applied to oversight.",
+    span: "md:col-span-4",
+  },
 ];
 
 export default function Services() {
@@ -75,7 +103,7 @@ export default function Services() {
           </div>
           <div className="col-span-12 md:col-span-8">
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95] tracking-[-0.02em]">
-              Six practices.<br />
+              Nine practices.<br />
               <span className="italic">One quiet</span> promise.
             </h2>
           </div>
@@ -85,13 +113,16 @@ export default function Services() {
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
-              <motion.div
+              <motion.a
                 key={s.tag}
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.04 }}
-                className={`relative border border-ink p-8 md:p-10 ${
+                className={`relative block border border-ink p-8 md:p-10 ${
                   s.span || ""
                 } ${s.dark ? "bg-forest text-[#f4f1ea]" : "bg-[#e8e3d8]/60"} group`}
                 data-testid={`service-card-${s.tag}`}
@@ -133,7 +164,7 @@ export default function Services() {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             );
           })}
         </div>

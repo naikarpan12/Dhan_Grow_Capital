@@ -23,7 +23,7 @@ Marketing website for DhanGrow Capital, a boutique mutual fund distribution busi
 - Hero — kinetic masked line reveal + parallax abstract background
 - Editorial marquee (Discipline · Patience · Research…)
 - Manifesto — 4 numbered chapters (I-IV) with off-grid asymmetry & clipped photo
-- Services — Tetris bento grid, 6 services incl dark forest hero card
+- Services — Tetris bento grid, 9 services incl dark forest hero card (adds GIFT City Funds, SIF, PMS)
 - Calculators — SIP / Lumpsum / Retirement / Education tabs with live recharts area chart
 - Founder & Trust — dark forest section, clipped portrait, credentials, animated counters
 - Insights — 3 placeholder editorial cards

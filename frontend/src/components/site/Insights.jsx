@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import { articles } from "@/lib/articles";
 
 const notes = [
   {
@@ -7,19 +9,29 @@ const notes = [
     date: "Dec 2025",
     title: "Why we're still under-weighting mid-cap heavy funds in early 2026",
     read: "6 min read",
+    href: "#",
   },
   {
     tag: "Client Letter",
     date: "Nov 2025",
     title: "The quiet math behind step-up SIPs — and why 10% works",
     read: "4 min read",
+    href: "#",
   },
   {
     tag: "Explainer",
     date: "Oct 2025",
     title: "Tax on debt mutual funds after 2023: a plain-language walkthrough",
     read: "5 min read",
+    href: "#",
   },
+  ...articles.map((a) => ({
+    tag: a.tag,
+    date: a.date,
+    title: a.title,
+    read: a.read,
+    href: `/insights/${a.slug}`,
+  })),
 ];
 
 export default function Insights() {
@@ -41,33 +53,48 @@ export default function Insights() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {notes.map((n, i) => (
-            <motion.a
-              key={n.title}
-              href="#"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              className="group border border-ink p-8 bg-[#f4f1ea] hover:bg-forest hover:text-[#f4f1ea] transition-colors duration-500 min-h-[280px] flex flex-col justify-between"
-              data-testid={`insight-card-${i + 1}`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="overline">{n.tag}</span>
-                <span className="overline opacity-60">{n.date}</span>
-              </div>
-              <h3 className="font-display text-2xl md:text-3xl leading-tight mt-16">
-                {n.title}
-              </h3>
-              <div className="mt-8 flex items-center justify-between">
-                <span className="overline opacity-70">{n.read}</span>
-                <ArrowUpRight
-                  size={20}
-                  className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-                />
-              </div>
-            </motion.a>
-          ))}
+          {notes.map((n, i) => {
+            const cardClass =
+              "group border border-ink p-8 bg-[#f4f1ea] hover:bg-forest hover:text-[#f4f1ea] transition-colors duration-500 min-h-[280px] flex flex-col justify-between h-full";
+            const cardContent = (
+              <>
+                <div className="flex items-center justify-between">
+                  <span className="overline">{n.tag}</span>
+                  <span className="overline opacity-60">{n.date}</span>
+                </div>
+                <h3 className="font-display text-2xl md:text-3xl leading-tight mt-16">
+                  {n.title}
+                </h3>
+                <div className="mt-8 flex items-center justify-between">
+                  <span className="overline opacity-70">{n.read}</span>
+                  <ArrowUpRight
+                    size={20}
+                    className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  />
+                </div>
+              </>
+            );
+            return (
+              <motion.div
+                key={n.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                data-testid={`insight-card-${i + 1}`}
+              >
+                {n.href.startsWith("/") ? (
+                  <Link to={n.href} className={cardClass}>
+                    {cardContent}
+                  </Link>
+                ) : (
+                  <a href={n.href} className={cardClass}>
+                    {cardContent}
+                  </a>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

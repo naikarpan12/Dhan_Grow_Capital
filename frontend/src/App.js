@@ -12,6 +12,7 @@ import FounderTrust from "@/components/site/FounderTrust";
 import Insights from "@/components/site/Insights";
 import Footer from "@/components/site/Footer";
 import FloatingCTA from "@/components/site/FloatingCTA";
+import ArticlePage from "@/components/site/ArticlePage";
 
 function Home() {
   return (
@@ -38,6 +39,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/insights/:slug" element={<ArticlePage />} />
         </Routes>
       </BrowserRouter>
       <Toaster position="bottom-left" />
